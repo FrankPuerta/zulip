@@ -1,4 +1,5 @@
 import re
+import requests
 from datetime import datetime, timezone
 from typing import Protocol
 
@@ -583,7 +584,22 @@ def api_gitlab_webhook(
     branches: str | None = None,
     use_merge_request_title: Json[bool] = True,
     user_specified_topic: OptionalUserSpecifiedTopicStr = None,
+    ignore_private_repositories: Json[bool] = False,
 ) -> HttpResponse:
+    
+    # Check if the repository is private and skip processing if ignore_private_repositories is True
+    if (
+        # checks to make sure its not empty
+        "repository" in payload
+        and ignore_private_repositories
+        
+        # Request the homepage link and if repository is private or unavilable it will return anything other then 200
+        and requests.get(payload["repository"]["homepage"]).status_code != 200
+    ):
+        # Ignore private repository events
+        return json_success(request)
+    
+    
     event = get_event(request, payload, branches)
     if event is not None:
         event_body_function = get_body_based_on_event(event)
