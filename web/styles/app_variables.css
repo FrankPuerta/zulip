@@ -198,6 +198,12 @@
     --search-pill-label-min-width: 2.5em; /* 35px at 14px/em */
 
     /*
+    This is the space for the searchbar's search icon, and the left padding
+    for the search suggestions so they match up with searchbar content.
+    */
+    --search-left-padding: 35px;
+
+    /*
     Since #navbar_alerts_wrapper can take variable height depending upon
     window width / language, we sync its height in navbar_alerts.js
     */
@@ -1434,6 +1440,21 @@
         hsl(0deg 0% 80%),
         hsl(0deg 0% 0% / 60%)
     );
+
+    /* User Profile Modal */
+    --color-user-profile-field-name: light-dark(
+        hsl(0deg 0% 20%),
+        hsl(236deg 33% 90%)
+    );
+    --color-border-user-profile-table: light-dark(
+        hsl(0deg 0% 87%),
+        hsl(0deg 0% 0% / 40%)
+    );
+    --color-border-manage-profile-footer: light-dark(
+        hsl(0deg 0% 87%),
+        hsl(0deg 0% 100% / 20%)
+    );
+
     /* Link colors */
     --color-text-link: light-dark(hsl(210deg 94% 42%), hsl(200deg 100% 50%));
     --color-text-link-decoration: light-dark(
@@ -1459,7 +1480,18 @@
         hsl(200deg 79% 66%)
     );
 
+    /* Tippy colors */
+    --color-background-tippy-box: light-dark(hsl(0deg 0% 20%), hsl(0deg 0% 0%));
+
     /* Widgets colors */
+    --color-background-dropdown-widget: light-dark(
+        hsl(240deg 20% 98%),
+        hsl(240deg 5% 16%)
+    );
+    --color-border-dropdown-widget: light-dark(
+        hsl(0deg 0% 0% / 40%),
+        hsl(0deg 0% 0%)
+    );
     --color-border-dropdown-widget-button: light-dark(
         hsl(0deg 0% 80%),
         hsl(0deg 0% 0% / 60%)

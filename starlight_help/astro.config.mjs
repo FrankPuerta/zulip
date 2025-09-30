@@ -94,6 +94,11 @@ export default defineConfig({
                 {
                     label: "Zulip homepage",
                     link: "https://zulip.com",
+                    attrs: {
+                        class: "external-icon-sidebar",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                    },
                 },
                 {
                     label: "Help center home",
@@ -109,10 +114,20 @@ export default defineConfig({
                         {
                             label: "Choosing a team chat app",
                             link: "https://blog.zulip.com/2024/11/04/choosing-a-team-chat-app/",
+                            attrs: {
+                                class: "external-icon-sidebar",
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                            },
                         },
                         {
                             label: "Why Zulip",
                             link: "https://zulip.com/why-zulip/",
+                            attrs: {
+                                class: "external-icon-sidebar",
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                            },
                         },
                         "trying-out-zulip",
                         {
@@ -170,6 +185,7 @@ export default defineConfig({
                         "switching-between-organizations",
                         "import-your-settings",
                         "review-your-settings",
+                        "protect-your-account",
                         "deactivate-your-account",
                     ],
                 },
@@ -368,8 +384,13 @@ export default defineConfig({
                     label: "Apps",
                     items: [
                         {
-                            label: "Download apps for every platform",
+                            label: "Download apps",
                             link: "https://zulip.com/apps/",
+                            attrs: {
+                                class: "external-icon-sidebar",
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                            },
                         },
                         {
                             label: "Mobile app installation guides",
