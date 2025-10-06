@@ -769,13 +769,6 @@
         hsl(0deg 0% 97%),
         color-mix(in srgb, hsl(0deg 0% 97%) 8%, hsl(0deg 0% 11%))
     );
-    /* We mix an opaque version with the background for
-       replicating the color on .sidebar-topic-check, which
-       will mask a portion of the topic-grouping bracket. */
-    --color-background-opaque-hover-narrow-filter: light-dark(
-        var(--color-background-hover-narrow-filter),
-        color-mix(in srgb, hsl(0deg 0% 97%) 8%, hsl(0deg 0% 11%))
-    );
     --color-shadow-sidebar-row-hover: light-dark(
         hsl(0deg 0% 0% / 30%),
         hsl(0deg 0% 100% / 30%)
@@ -987,9 +980,8 @@
         hsl(18deg 100% 84%),
         hsl(22deg 70% 35%)
     );
-    --color-buddy-list-highlighted-user: light-dark(
-        var(--color-background-hover-narrow-filter),
-        var(--color-background-opaque-hover-narrow-filter)
+    --color-buddy-list-highlighted-user: var(
+        --color-background-hover-narrow-filter
     );
     --color-buddy-list-avatar-loading: light-dark(
         hsl(0deg 0% 0% / 10%),
@@ -2751,6 +2743,20 @@
     );
 
     /* Inputs */
+    /* Legacy input colors */
+    /* TODO: Remove these variables after migrating all the inputs to use the new input colors. */
+    --color-background-legacy-input: light-dark(
+        hsl(0deg 0% 100%),
+        hsl(0deg 0% 0% / 20%)
+    );
+    --color-border-legacy-input: light-dark(
+        hsl(0deg 0% 80%),
+        hsl(0deg 0% 0% / 60%)
+    );
+    --color-border-legacy-input-focus: light-dark(
+        hsl(206deg 80% 62% / 80%),
+        hsl(0deg 0% 0% / 90%)
+    );
     --color-text-input: light-dark(hsl(0deg 0% 14%), hsl(0deg 0% 95%));
     /* TODO: Light mode uses browser-default white
        backgrounds; we should extend the use of this
@@ -2967,17 +2973,6 @@
     --unread-marker-left: 0;
 
     /* Colors used across the app */
-    /* We mix an opaque version with the background for
-       replicating the color on .sidebar-topic-check, which
-       will mask a portion of the topic-grouping bracket.
-       The same is necessary for buddy-list heading hovers
-       in the right sidebar. */
-    --color-background-opaque-hover-active-narrow-filter: color-mix(
-        in srgb,
-        hsl(0deg 0% 97%) 8%,
-        hsl(0deg 0% 97%) 8%,
-        hsl(0deg 0% 11%)
-    );
     --color-recipient-bar-controls-spinner: hsl(0deg 0% 100%);
     --box-shadow-unread-counter-normal: none;
 
